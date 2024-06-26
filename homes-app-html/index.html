@@ -20,8 +20,8 @@
 
         <section class="content">
             <form>
-                <input type="text" placeholder="Filtrar por cidade">
-                <button class="primary">Filtrar</button>
+                <input type="text" placeholder="Filtrar por cidade" id="pesquisa" onkeypress="filtrarComEnter(event)">
+                <button type="button" class="primary" onclick="filtrar_imoveis()">Filtrar</button>
             </form>
 
             <section class="results" id="lista-imoveis">
