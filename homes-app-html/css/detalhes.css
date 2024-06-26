@@ -6,6 +6,12 @@ h2 {
     font-size: 35px !important;
 }
 
+/*Adicionar esta classe*/
+.brand-name {
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
 .listing-photo {
     height: 500px;
     width: 50%;
@@ -23,7 +29,7 @@ h2 {
 }
 
 .listing-location::before {
-    content: url('/assets/location-pin.svg') / '';
+    content: url('/img/location-pin.svg') / '';
 }
 
 .listing-location {

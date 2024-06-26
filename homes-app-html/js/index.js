@@ -1,69 +1,4 @@
-const imoveis = [
-    {
-        "id": 1,
-        "url_foto": "img/1.jpg",
-        "nome": "Casa 01",
-        "cidade": "Saltinho",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 2,
-        "url_foto": "img/2.jpg",
-        "nome": "Casa 02",
-        "cidade": "Saltinho",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 3,
-        "url_foto": "img/3.jpg",
-        "nome": "Casa 03",
-        "cidade": "Americana",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 4,
-        "url_foto": "img/4.jpg",
-        "nome": "Casa 04",
-        "cidade": "Nova Odessa",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 5,
-        "url_foto": "img/5.jpg",
-        "nome": "Casa 05",
-        "cidade": "Piracicaba",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 6,
-        "url_foto": "img/6.jpg",
-        "nome": "Casa 06",
-        "cidade": "Cabreúva",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 7,
-        "url_foto": "img/7.jpg",
-        "nome": "Casa 07",
-        "cidade": "Sumaré",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 8,
-        "url_foto": "img/8.jpg",
-        "nome": "Casa 08",
-        "cidade": "Piracicaba",
-        "estado": "São Paulo"
-    },
-    {
-        "id": 9,
-        "url_foto": "img/9.jpg",
-        "nome": "Casa 09",
-        "cidade": "Saltinho",
-        "estado": "São Paulo"
-    }
-]
-
+const imoveis = buscarTodosImoveis()
 function criarImovelHtml(imovel){
     const section = document.createElement("section")
     section.setAttribute("class", "listing")
@@ -90,11 +25,13 @@ function criarImovelHtml(imovel){
     const a = document.createElement("a")
     a.textContent = "Veja mais"
     section.appendChild(a)
+    const url = `detalhes.html?imvovelId=${imovel.id}`
+    a.setAttribute("href", url)
+    
 
     // section pai
     const sectionResults = document.getElementById("lista-imoveis")
     sectionResults.appendChild(section)
-
 
 }
 
@@ -113,10 +50,12 @@ function listarImoveisComFiltro(texto) {
         for (let i = 0; i < imoveis.length; i++) {
             const imovel = imoveis[i];
             
-            const textoM = texto.toUpperCase()
-            const cidadeImovelM = imovel.cidade.toUpperCase()
+            const textoM = removerAcentos(texto.toUpperCase())
+            const estadoImovelM = removerAcentos(imovel.estado.toUpperCase())
+            const cidadeImovelM = removerAcentos(imovel.cidade.toUpperCase())
+            
 
-            if (cidadeImovelM.search(textoM) == 0) {
+            if (cidadeImovelM.search(textoM) == 0 || estadoImovelM.search(textoM) == 0) {
                 //aparecer na página 
                 criarImovelHtml(imovel)
             }
@@ -151,3 +90,7 @@ function filtrarComEnter(tecla) {
 
 mostarTodosOsImovies()
 
+function removerAcentos(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+}
