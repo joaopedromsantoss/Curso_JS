@@ -3,6 +3,12 @@
     margin-left: 45px;
 }
 
+.favorito{
+    float: right;
+    margin-right: 30px;
+    width: 6%;
+    cursor: pointer;
+}
 section {
     margin-top: 20px;
 }

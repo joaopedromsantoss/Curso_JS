@@ -25,9 +25,17 @@ function criarImovelHtml(imovel){
     const a = document.createElement("a")
     a.textContent = "Veja mais"
     section.appendChild(a)
-    const url = `detalhes.html?imvovelId=${imovel.id}`
+    const url = `detalhes.html?imovelId=${imovel.id}`
     a.setAttribute("href", url)
-    
+
+    //section favorito
+    const favorito = document.createElement("img")
+    const favId = `fav-${imovel.id}`
+    favorito.setAttribute("id", favId)
+    favorito.setAttribute("src", "img/desfavorito.png")
+    favorito.setAttribute("class", "favorito")
+    favorito.setAttribute("onclick", `favoritar(${JSON.stringify(imovel)})`)
+    section.appendChild(favorito)    
 
     // section pai
     const sectionResults = document.getElementById("lista-imoveis")
@@ -93,4 +101,15 @@ mostarTodosOsImovies()
 function removerAcentos(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
+}
+
+function favoritar(imovel) {
+    const favId = `fav-${imovel.id}`
+    const fav = document.getElementById(favId)
+
+    if (fav.getAttribute("src") == "/img/favorito.png") {
+        fav.setAttribute("src", "/img/desfavorito.png")
+    } else {
+        fav.setAttribute("src", "/img/favorito.png")
+    }
 }
