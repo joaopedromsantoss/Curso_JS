@@ -22,6 +22,12 @@
             <form>
                 <input type="text" placeholder="Filtrar por cidade" id="pesquisa" onkeypress="filtrarComEnter(event)">
                 <button type="button" class="primary" onclick="filtrar_imoveis()">Filtrar</button>
+                <label>
+                    <input type="checkbox" id="ImCasa" onclick="filtrar_imoveis()"> Casa
+                </label>
+                <label>
+                    <input type="checkbox" id="ImApartamento" onclick="filtrar_imoveis()"> Apartamento
+                </label>
             </form>
 
             <section class="results" id="lista-imoveis">

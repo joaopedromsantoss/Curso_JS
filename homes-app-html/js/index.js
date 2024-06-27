@@ -49,36 +49,41 @@ function filtrar_imoveis(){
 }
 
 function listarImoveisComFiltro(texto) {
+
+    const casaFiltro = document.getElementById("ImCasa").checked
+    const apartamentoFiltro = document.getElementById("ImApartamento").checked
+
+    const mostarTodos = !casaFiltro && !apartamentoFiltro
     
     limparListaImoveis()
     
-    if (texto == "") {
-        mostarTodosOsImovies()
-    } else {
         for (let i = 0; i < imoveis.length; i++) {
             const imovel = imoveis[i];
             
             const textoM = removerAcentos(texto.toUpperCase())
             const estadoImovelM = removerAcentos(imovel.estado.toUpperCase())
             const cidadeImovelM = removerAcentos(imovel.cidade.toUpperCase())
-            
 
-            if (cidadeImovelM.search(textoM) == 0 || estadoImovelM.search(textoM) == 0) {
+            const tipoImovelM = imovel.tipoImovel.toLowerCase()
+
+            if (mostarTodos || (casaFiltro && tipoImovelM == "casa") || (apartamentoFiltro && tipoImovelM == "apartamento")) {
+                   
+                if (texto == "" || cidadeImovelM.search(textoM) == 0 || estadoImovelM.search(textoM) == 0) {
                 //aparecer na página 
                 criarImovelHtml(imovel)
+                }
             }
+
         }   
     }
 
-    
-}
 
-function mostarTodosOsImovies() {
-    
-    for (let i = 0; i < imoveis.length; i++) {
+function mostarTodosOsImovies() { 
+    for (let i=0; i < imoveis.length; i++) {
         const imovel = imoveis[i]
         criarImovelHtml(imovel)
     }
+
 }
 
 function limparListaImoveis() {
@@ -113,3 +118,6 @@ function favoritar(imovel) {
         fav.setAttribute("src", "/img/favorito.png")
     }
 }
+
+
+

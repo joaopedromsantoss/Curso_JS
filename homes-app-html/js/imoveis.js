@@ -5,6 +5,7 @@ const imoveisDB = [
         "nome": "Sobrado Lindo",
         "cidade": "Salto",
         "estado": "Minas Gerais",
+        "tipoImovel": "casa",
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -22,6 +23,7 @@ const imoveisDB = [
         "nome": "Kitnet Economica",
         "cidade": "Saltinho",
         "estado": "São Paulo",
+        "tipoImovel": "apartamento",
         "adicionais": [
             {
                 "chave": "Banheiro",
@@ -35,6 +37,7 @@ const imoveisDB = [
         "nome": "Casarão na floresta",
         "cidade": "Americana",
         "estado": "São Paulo",
+        "tipoImovel": "casa",
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -52,6 +55,7 @@ const imoveisDB = [
         "nome": "Casa 04",
         "cidade": "Nova Odessa",
         "estado": "São Paulo",
+        "tipoImovel": "casa",
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -69,6 +73,7 @@ const imoveisDB = [
         "nome": "Casa 05",
         "cidade": "Piracicaba",
         "estado": "São Paulo",
+        "tipoImovel": "casa",
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -86,6 +91,7 @@ const imoveisDB = [
         "nome": "Casa 06",
         "cidade": "Cabreúva",
         "estado": "São Paulo",
+        "tipoImovel": "casa",
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -103,6 +109,7 @@ const imoveisDB = [
         "nome": "Casa 07",
         "cidade": "Sumaré",
         "estado": "São Paulo",
+        "tipoImovel": "casa",
         "adicionais": []
     },
     {
@@ -111,6 +118,7 @@ const imoveisDB = [
         "nome": "Casa 08",
         "cidade": "Piracicaba",
         "estado": "São Paulo",
+        "tipoImovel": "casa",
         "adicionais": []
     },
     {
@@ -119,6 +127,7 @@ const imoveisDB = [
         "nome": "Casa 09",
         "cidade": "Saltinho",
         "estado": "São Paulo",
+        "tipoImovel": "apartamento",
         "adicionais": []
     }
 ]
