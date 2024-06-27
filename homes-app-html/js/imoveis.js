@@ -125,7 +125,7 @@ const imoveisDB = [
         "id": 9,
         "url_foto": "img/9.jpg",
         "nome": "Casa 09",
-        "cidade": "Saltinho",
+        "cidade": "Piracicaba",
         "estado": "São Paulo",
         "tipoImovel": "apartamento",
         "adicionais": []

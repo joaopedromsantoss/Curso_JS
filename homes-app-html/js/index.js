@@ -78,7 +78,7 @@ function listarImoveisComFiltro(texto) {
     }
 
 
-function mostarTodosOsImovies() { 
+function mostarTodosOsImovies() {
     for (let i=0; i < imoveis.length; i++) {
         const imovel = imoveis[i]
         criarImovelHtml(imovel)
