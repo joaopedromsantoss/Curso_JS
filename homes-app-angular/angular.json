@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "homes-app-angular": {
+    "home-app-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/homes-app-angular",
+            "outputPath": "dist/home-app-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "homes-app-angular:build:production"
+              "buildTarget": "home-app-angular:build:production"
             },
             "development": {
-              "buildTarget": "homes-app-angular:build:development"
+              "buildTarget": "home-app-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": "10d3c3c7-db36-4acb-b2b3-6042e2f71676"
+    "analytics": "15b641ef-51f8-44ea-a589-c9db4e09d7b1"
   }
 }
